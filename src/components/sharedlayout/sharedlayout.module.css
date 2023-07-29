@@ -15,7 +15,8 @@
 .container {
   width: calc(100vw - 15%);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem 1rem;
+  height: calc(100vh - 9rem);
 }
 
 .navBox {

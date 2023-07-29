@@ -9,13 +9,16 @@
 // import { Blocks } from 'react-loader-spinner';
 import { Routes, Route } from 'react-router-dom';
 import { SharedLayout } from './sharedlayout';
+import { lazy } from 'react';
+
+const Home = lazy(() => import('../pages/Home/Home'));
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        {/* <Route index element={<Home />} />
-        <Route path="*" element={<Home />} /> */}
+        <Route index element={<Home />} />
+        <Route path="*" element={<Home />} />
       </Route>
     </Routes>
   );
