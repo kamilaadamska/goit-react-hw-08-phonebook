@@ -12,7 +12,10 @@ const Home = () => {
         </h1>
         <p className={css.logOrReg}>
           <Link className={css.link}>Login</Link> or{' '}
-          <Link className={css.link}>register</Link> now!
+          <Link to="/register" className={css.link}>
+            register
+          </Link>{' '}
+          now!
         </p>
       </div>
     </div>

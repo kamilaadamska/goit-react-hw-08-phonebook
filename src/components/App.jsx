@@ -12,12 +12,14 @@ import { SharedLayout } from './sharedlayout';
 import { lazy } from 'react';
 
 const Home = lazy(() => import('../pages/Home/Home'));
+const Register = lazy(() => import('../pages/Register/Register'));
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
+        <Route path="register" element={<Register />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>
