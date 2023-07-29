@@ -3,26 +3,29 @@
   align-items: center;
   justify-content: center;
   height: 80%;
-  position: relative;
+}
+
+.logo {
+  z-index: 2;
+  margin-bottom: 1.2rem;
 }
 
 .slogan {
   margin-left: -5rem;
+  margin-bottom: 0.2rem;
   font-size: 1.5rem;
   font-weight: 500;
   width: 15rem;
   background-color: #71d5e4;
   border-radius: 4rem;
   padding: 1rem 1.5rem 1rem 6rem;
-  z-index: -1;
 }
 
 .logOrReg {
-  position: absolute;
-  bottom: 20%;
-  left: 45%;
   font-size: 1.5rem;
   font-weight: 700;
+  margin: 0;
+  margin-left: -1rem;
 }
 
 .link {
