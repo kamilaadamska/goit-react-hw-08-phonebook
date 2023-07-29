@@ -35,7 +35,13 @@ export const SharedLayout = () => {
       </header>
       <main>
         <div className={css.container}>
-          <Suspense fallback={<Blocks />}>
+          <Suspense
+            fallback={
+              <div className={css.centeredContainer}>
+                <Blocks wrapperClass={css.centeredContainer} />
+              </div>
+            }
+          >
             <Outlet />
           </Suspense>
         </div>
