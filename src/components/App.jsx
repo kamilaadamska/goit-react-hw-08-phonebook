@@ -13,6 +13,7 @@ import { lazy } from 'react';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Register = lazy(() => import('../pages/Register/Register'));
+const Login = lazy(() => import('../pages/Login/Login'));
 
 export const App = () => {
   return (
@@ -20,6 +21,7 @@ export const App = () => {
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
         <Route path="register" element={<Register />} />
+        <Route path="login" element={<Login />} />
         <Route path="*" element={<Home />} />
       </Route>
     </Routes>

@@ -11,7 +11,10 @@ const Home = () => {
           Keep your contacts safe and organize them easily!
         </h1>
         <p className={css.logOrReg}>
-          <Link className={css.link}>Login</Link> or{' '}
+          <Link to="/login" className={css.link}>
+            Login
+          </Link>{' '}
+          or{' '}
           <Link to="/register" className={css.link}>
             register
           </Link>{' '}
