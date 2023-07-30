@@ -5,3 +5,4 @@ export * from './usermenu';
 export * from './contactform';
 export * from './filter';
 export * from './contactlist';
+export * from './editwindow';

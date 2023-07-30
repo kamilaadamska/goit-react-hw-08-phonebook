@@ -14,6 +14,10 @@
   background-color: #71d5e4;
 }
 
+.headerSecondary:first-child {
+  margin-top: 0;
+}
+
 .contactsBox {
   padding: 2rem;
   border: 5px dotted #00b6bc;
