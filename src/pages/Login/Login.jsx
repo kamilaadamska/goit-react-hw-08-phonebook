@@ -1,10 +1,26 @@
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logIn } from 'redux/auth/operations';
 import avatar from '../../images/blank-avatar.png';
 import css from './login.module.css';
 
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const logForm = e.currentTarget;
+    dispatch(
+      logIn({
+        email: logForm.elements.email.value,
+        password: logForm.elements.password.value,
+      })
+    );
+    form.reset();
+  };
+
   return (
-    <form className={css.loginForm}>
+    <form onSubmit={handleSubmit} className={css.loginForm}>
       <img src={avatar} alt="blank avatar" width="130" className={css.avatar} />
       <label className={css.formLabel}>
         E-mail
