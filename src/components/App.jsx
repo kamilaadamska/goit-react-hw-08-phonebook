@@ -8,6 +8,9 @@
 // import { fetchContacts } from 'redux/operations';
 // import { Blocks } from 'react-loader-spinner';
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { refreshUser } from 'redux/auth/operations';
 import { SharedLayout } from './sharedlayout';
 import { lazy } from 'react';
 
@@ -16,6 +19,12 @@ const Register = lazy(() => import('../pages/Register/Register'));
 const Login = lazy(() => import('../pages/Login/Login'));
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>

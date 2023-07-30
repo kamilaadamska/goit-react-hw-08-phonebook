@@ -1,0 +1,23 @@
+.menuBox {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.helloUser {
+  font-weight: 700;
+}
+
+.logOutBtn {
+  padding: 0.25rem 0.5rem;
+  border: 2px solid #00b6bc;
+  background-color: #71d5e4;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.logOutBtn:hover {
+  box-shadow: inset 3px 3px 21px -14px rgba(66, 68, 90, 1);
+  cursor: pointer;
+  background-color: #a1dbf1;
+}

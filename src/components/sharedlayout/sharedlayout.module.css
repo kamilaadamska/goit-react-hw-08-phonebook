@@ -22,48 +22,8 @@
 .navBox {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-}
-
-.link {
-  padding-bottom: 0.5rem;
-  text-decoration: none;
-  color: black;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.link:first-child {
-  margin-right: 2rem;
-}
-
-.link::before {
-  content: '';
-  width: 0;
-  height: 2px;
-  position: absolute;
-  bottom: 1px;
-  left: 0;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.link:hover::before {
-  width: 100%;
-  right: 0;
-  background: #00b6bc;
-}
-
-.link:global.active::before {
-  content: '';
-  width: 100%;
-  right: 0;
-  background: #00b6bc;
-  height: 2px;
-  position: absolute;
-  bottom: 1px;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .centeredContainer {
