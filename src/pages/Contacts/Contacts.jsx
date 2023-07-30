@@ -42,7 +42,11 @@ const Contacts = () => {
             Add contact
           </button>
           {showContactsForm && <ContactForm />}
-          <Filter />
+          {contacts <= 0 ? (
+            <p className={css.info}>Add your first contact!</p>
+          ) : (
+            <Filter />
+          )}
           {isLoading && (
             <div className={css.centred}>
               <Blocks />

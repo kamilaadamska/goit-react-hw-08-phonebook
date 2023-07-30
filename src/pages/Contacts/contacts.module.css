@@ -50,3 +50,9 @@
   padding: 0.6rem;
   margin-bottom: 1.2rem;
 }
+
+.info {
+  font-weight: 700;
+  opacity: 0.3;
+  z-index: -4;
+}
