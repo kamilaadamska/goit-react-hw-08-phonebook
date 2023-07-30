@@ -84,11 +84,7 @@ export const EditWindow = () => {
       <button type="submit" className={css.formButton}>
         Edit contact
       </button>
-      <button
-        type="button"
-        className={css.formButton}
-        onClick={() => cancelEditing()}
-      >
+      <button type="button" className={css.formButton} onClick={cancelEditing}>
         Cancel
       </button>
     </form>

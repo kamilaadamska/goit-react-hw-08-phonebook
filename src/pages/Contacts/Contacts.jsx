@@ -4,7 +4,9 @@ import {
   selectContacts,
   selectIsLoading,
   selectError,
+  selectShowContactForm,
 } from 'redux/contacts/selectors';
+import { setShowContactForm } from 'redux/contacts/showContactFormSlice';
 import { fetchContacts } from 'redux/contacts/operations';
 import { ContactForm } from 'components';
 import { Filter } from 'components';
@@ -17,17 +19,24 @@ const Contacts = () => {
   const contacts = useSelector(selectContacts);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
+  const showContactsForm = useSelector(selectShowContactForm);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
+  const show = () => {
+    dispatch(setShowContactForm(!showContactsForm));
+  };
+
   return (
     <div className={css.container}>
-      <h2 className={css.headerSecondary}>Add a new contact</h2>
-      <ContactForm />
-      <h2 className={css.headerSecondary}>Contacts</h2>
+      <h2 className={css.header}>Contacts</h2>
       <div className={css.contactsBox}>
+        <button type="button" onClick={show} className={css.formButton}>
+          Add contact
+        </button>
+        {showContactsForm && <ContactForm />}
         <Filter />
         {isLoading && (
           <div className={css.centred}>

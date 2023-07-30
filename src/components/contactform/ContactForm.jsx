@@ -1,11 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
-import { selectContacts } from 'redux/contacts/selectors';
+import {
+  selectContacts,
+  selectShowContactForm,
+} from 'redux/contacts/selectors';
+import { setShowContactForm } from 'redux/contacts/showContactFormSlice';
 import css from './contactform.module.css';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+  const showContactsForm = useSelector(selectShowContactForm);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,6 +32,10 @@ export const ContactForm = () => {
 
     dispatch(addContact(newContact));
     addContactForm.reset();
+  };
+
+  const cancelForm = () => {
+    dispatch(setShowContactForm(!showContactsForm));
   };
 
   return (
@@ -55,6 +64,9 @@ export const ContactForm = () => {
       </label>
       <button type="submit" className={css.formButton}>
         Add contact
+      </button>
+      <button type="button" className={css.formButton} onClick={cancelForm}>
+        Cancel
       </button>
     </form>
   );

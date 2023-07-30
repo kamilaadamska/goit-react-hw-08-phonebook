@@ -14,6 +14,7 @@ import { authReducer } from './auth/slice';
 import { contactsReducer } from './contacts/contactsSlice';
 import { filterReducer } from './contacts/filterSlice';
 import { editReducer } from './contacts/editSlice';
+import { showContactFormReducer } from './contacts/showContactFormSlice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -27,6 +28,7 @@ export const store = configureStore({
     contacts: contactsReducer,
     filter: filterReducer,
     edit: editReducer,
+    showContactForm: showContactFormReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

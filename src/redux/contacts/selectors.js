@@ -16,6 +16,8 @@ export const selectNameToEdit = state => state.edit.nameToEdit;
 
 export const selectNumberToEdit = state => state.edit.numberToEdit;
 
+export const selectShowContactForm = state => state.showContactForm;
+
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {

@@ -5,6 +5,11 @@
   padding: 2rem;
   border: 5px dotted #00b6bc;
   border-radius: 1rem;
+  background-color: #e4f4f3;
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+  transform: translate(20%, -35%);
 }
 
 .formLabel {

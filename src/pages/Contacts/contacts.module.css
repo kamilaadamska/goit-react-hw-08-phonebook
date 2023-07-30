@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.headerSecondary {
+.header {
   color: #00b6bc;
   font-size: 2rem;
   padding: 5px 15px;
@@ -12,9 +12,6 @@
   text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
     -1px 1px 0 black;
   background-color: #71d5e4;
-}
-
-.headerSecondary:first-child {
   margin-top: 0;
 }
 
@@ -29,4 +26,18 @@
 .centred {
   display: flex;
   justify-content: center;
+}
+
+.formButton {
+  padding: 0.5rem;
+  border: 1px solid #00b6bc;
+  background-color: #71d5e4;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.formButton:hover {
+  box-shadow: inset 3px 3px 21px -14px rgba(66, 68, 90, 1);
+  cursor: pointer;
+  background-color: #a1dbf1;
 }
