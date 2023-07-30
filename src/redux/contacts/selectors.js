@@ -12,6 +12,10 @@ export const selectEditStatus = state => state.edit.status;
 
 export const selectIdToEdit = state => state.edit.idToEdit;
 
+export const selectNameToEdit = state => state.edit.nameToEdit;
+
+export const selectNumberToEdit = state => state.edit.numberToEdit;
+
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {

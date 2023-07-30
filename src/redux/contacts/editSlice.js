@@ -3,6 +3,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const editInitialState = {
   status: false,
   idToEdit: null,
+  nameToEdit: null,
+  numberToEdit: null,
 };
 
 const editSlice = createSlice({
@@ -10,8 +12,10 @@ const editSlice = createSlice({
   initialState: editInitialState,
   reducers: {
     setEdit(state, action) {
-      state.status = !state.status;
-      state.idToEdit = action.payload;
+      state.status = action.payload.status;
+      state.idToEdit = action.payload.id;
+      state.nameToEdit = action.payload.name;
+      state.numberToEdit = action.payload.number;
     },
   },
 });

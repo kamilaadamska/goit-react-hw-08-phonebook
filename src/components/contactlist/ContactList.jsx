@@ -14,8 +14,9 @@ export const ContactList = () => {
   const isEditing = useSelector(selectEditStatus);
 
   const handleDelete = id => dispatch(deleteContact(id));
-  const handleEdit = id => {
-    dispatch(setEdit(id));
+  const handleEdit = (id, name, number) => {
+    const status = true;
+    dispatch(setEdit({ status, id, name, number }));
   };
 
   return (
@@ -26,7 +27,7 @@ export const ContactList = () => {
           <li key={id} className={css.contactItem}>
             {name}: {number}
             <button
-              onClick={() => handleEdit(id)}
+              onClick={() => handleEdit(id, name, number)}
               type="button"
               className={css.formBtn}
             >
