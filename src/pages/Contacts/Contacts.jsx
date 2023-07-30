@@ -1,3 +1,4 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import {
@@ -30,27 +31,32 @@ const Contacts = () => {
   };
 
   return (
-    <div className={css.container}>
-      <h2 className={css.header}>Contacts</h2>
-      <div className={css.contactsBox}>
-        <button type="button" onClick={show} className={css.addContactBtn}>
-          Add contact
-        </button>
-        {showContactsForm && <ContactForm />}
-        <Filter />
-        {isLoading && (
-          <div className={css.centred}>
-            <Blocks />
-          </div>
-        )}
-        {error && (
-          <div className={css.centred}>
-            <b>{error}</b>
-          </div>
-        )}
-        {contacts && <ContactList />}
+    <HelmetProvider>
+      <Helmet>
+        <title>PhoneBook - Contacts</title>
+      </Helmet>
+      <div className={css.container}>
+        <h2 className={css.header}>Contacts</h2>
+        <div className={css.contactsBox}>
+          <button type="button" onClick={show} className={css.addContactBtn}>
+            Add contact
+          </button>
+          {showContactsForm && <ContactForm />}
+          <Filter />
+          {isLoading && (
+            <div className={css.centred}>
+              <Blocks />
+            </div>
+          )}
+          {error && (
+            <div className={css.centred}>
+              <b>{error}</b>
+            </div>
+          )}
+          {contacts && <ContactList />}
+        </div>
       </div>
-    </div>
+    </HelmetProvider>
   );
 };
 
