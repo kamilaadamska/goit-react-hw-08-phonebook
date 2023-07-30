@@ -22,24 +22,33 @@ export const ContactList = () => {
   return (
     <>
       {isEditing && <EditWindow />}
-      <ul>
+      <ul className={css.contactList}>
         {filteredContacts.map(({ id, name, number }) => (
           <li key={id} className={css.contactItem}>
-            {name}: {number}
-            <button
-              onClick={() => handleEdit(id, name, number)}
-              type="button"
-              className={css.formBtn}
-            >
-              Edit
-            </button>
-            <button
-              onClick={() => handleDelete(id)}
-              type="button"
-              className={css.formBtn}
-            >
-              Remove
-            </button>
+            <div className={css.text}>
+              <span>😊 </span>
+              {name}
+            </div>
+            <div className={css.text}>
+              <span>📞 </span>
+              {number}
+            </div>
+            <div>
+              <button
+                onClick={() => handleEdit(id, name, number)}
+                type="button"
+                className={css.formBtn}
+              >
+                Edit
+              </button>
+              <button
+                onClick={() => handleDelete(id)}
+                type="button"
+                className={css.formBtn}
+              >
+                Remove
+              </button>
+            </div>
           </li>
         ))}
       </ul>
