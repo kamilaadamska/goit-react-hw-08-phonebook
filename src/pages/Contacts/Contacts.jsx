@@ -5,6 +5,7 @@ import {
   selectIsLoading,
   selectError,
 } from 'redux/contacts/selectors';
+import { fetchContacts } from 'redux/contacts/operations';
 import { ContactForm } from 'components';
 import { Filter } from 'components';
 import { Blocks } from 'react-loader-spinner';

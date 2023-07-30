@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
-import { useAuth } from 'hooks';
-import { Navigate } from 'react-router-dom';
+// import { useAuth } from 'hooks';
+// import { Navigate } from 'react-router-dom';
 import css from './register.module.css';
 
 const Register = () => {
-  const { isLoggedIn } = useAuth();
+  // const { isLoggedIn } = useAuth();
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -24,7 +24,7 @@ const Register = () => {
 
   return (
     <>
-      {isLoggedIn ? <Navigate to="/" /> : null}
+      {/* {isLoggedIn ? <Navigate to="/" /> : null} */}
       <form onSubmit={handleSubmit} className={css.registerForm}>
         <label className={css.formLabel}>
           Username
