@@ -37,6 +37,9 @@ export const SharedLayout = () => {
           </Suspense>
         </div>
       </main>
+      <footer className={css.footer}>
+        <p>Copyrights by Phonebook® 2023 | Desgined by Kamila Adamska</p>
+      </footer>
     </>
   );
 };
