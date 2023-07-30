@@ -48,6 +48,9 @@ export const ContactForm = () => {
   return (
     <div className={css.modalContainer}>
       <form onSubmit={handleSubmit} className={css.contactForm}>
+        <button type="button" className={css.cancelButton} onClick={cancelForm}>
+          x
+        </button>
         <label className={css.formLabel}>
           Name
           <input
@@ -72,9 +75,6 @@ export const ContactForm = () => {
         </label>
         <button type="submit" className={css.formButton}>
           Add contact
-        </button>
-        <button type="button" className={css.formButton} onClick={cancelForm}>
-          Cancel
         </button>
       </form>
     </div>

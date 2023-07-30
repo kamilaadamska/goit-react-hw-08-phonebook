@@ -60,6 +60,13 @@ export const EditWindow = () => {
   return (
     <div className={css.modalContainer}>
       <form onSubmit={handleSubmit} className={css.editWindow}>
+        <button
+          type="button"
+          className={css.cancelButton}
+          onClick={cancelEditing}
+        >
+          x
+        </button>
         <label className={css.formLabel}>
           Name
           <input
@@ -88,13 +95,6 @@ export const EditWindow = () => {
         </label>
         <button type="submit" className={css.formButton}>
           Edit contact
-        </button>
-        <button
-          type="button"
-          className={css.formButton}
-          onClick={cancelEditing}
-        >
-          Cancel
         </button>
       </form>
     </div>
