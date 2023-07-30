@@ -4,7 +4,6 @@
 // import { ContactForm } from './contactform/ContactForm';
 // import { ContactList } from './contactlist/ContactList';
 // import { Filter } from './filter/Filter';
-// import css from './app.module.css';
 // import { fetchContacts } from 'redux/operations';
 // import { Blocks } from 'react-loader-spinner';
 import { Routes, Route } from 'react-router-dom';
@@ -12,7 +11,10 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { refreshUser } from 'redux/auth/operations';
 import { SharedLayout } from './sharedlayout';
+import { Blocks } from 'react-loader-spinner';
+import { useAuth } from 'hooks';
 import { lazy } from 'react';
+import css from './app.module.css';
 
 const Home = lazy(() => import('../pages/Home/Home'));
 const Register = lazy(() => import('../pages/Register/Register'));
@@ -20,12 +22,17 @@ const Login = lazy(() => import('../pages/Login/Login'));
 
 export const App = () => {
   const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
 
   useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return (
+  return isRefreshing ? (
+    <div className={css.centeredContainer}>
+      <Blocks wrapperClass={css.centeredContainer} />
+    </div>
+  ) : (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
         <Route index element={<Home />} />
