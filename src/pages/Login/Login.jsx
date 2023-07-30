@@ -1,13 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { logIn } from 'redux/auth/operations';
-// import { useAuth } from 'hooks';
-// import { Navigate } from 'react-router-dom';
 import avatar from '../../images/blank-avatar.png';
 import css from './login.module.css';
 
 const Login = () => {
-  // const { isLoggedIn } = useAuth();
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -23,8 +20,7 @@ const Login = () => {
   };
 
   return (
-    <>
-      {/* {isLoggedIn ? <Navigate to="/" /> : null} */}
+    <div className={css.container}>
       <form onSubmit={handleSubmit} className={css.loginForm}>
         <img
           src={avatar}
@@ -65,7 +61,7 @@ const Login = () => {
           now!
         </p>
       </form>
-    </>
+    </div>
   );
 };
 

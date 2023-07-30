@@ -5,6 +5,7 @@ import {
   selectShowContactForm,
 } from 'redux/contacts/selectors';
 import { setShowContactForm } from 'redux/contacts/showContactFormSlice';
+import { Notify } from 'notiflix';
 import css from './contactform.module.css';
 
 export const ContactForm = () => {
@@ -29,7 +30,9 @@ export const ContactForm = () => {
       )
     ) {
       addContactForm.reset();
-      return alert(`${newContact.name} is already in contacts!`);
+      return Notify.info(
+        `${newContact.name} is already in contacts! You can edit it.`
+      );
     }
 
     dispatch(addContact(newContact));
