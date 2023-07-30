@@ -12,9 +12,9 @@ export const ContactForm = () => {
 
     const addContactForm = e.currentTarget;
     const name = addContactForm.elements.name.value;
-    const phone = addContactForm.elements.number.value;
+    const number = addContactForm.elements.number.value;
 
-    const newContact = { name, phone };
+    const newContact = { name, number };
 
     if (
       contacts.find(

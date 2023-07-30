@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerSecondary {
+  color: #00b6bc;
+  font-size: 2rem;
+  padding: 5px 15px;
+  border-radius: 4px;
+  text-shadow: 1px 1px 0 black, -1px -1px 0 black, 1px -1px 0 black,
+    -1px 1px 0 black;
+  background-color: #71d5e4;
+}
+
+.contactsBox {
+  padding: 2rem;
+  border: 5px dotted #00b6bc;
+  border-radius: 1rem;
+  min-width: 27rem;
+  margin-bottom: 2rem;
+}
+
+.centred {
+  display: flex;
+  justify-content: center;
+}

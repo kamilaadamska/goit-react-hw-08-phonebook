@@ -11,9 +11,9 @@ export const ContactList = () => {
 
   return (
     <ul>
-      {filteredContacts.map(({ id, name, phone }) => (
+      {filteredContacts.map(({ id, name, number }) => (
         <li key={id} className={css.contactItem}>
-          {name}: {phone}
+          {name}: {number}
           <button
             onClick={() => handleDelete(id)}
             type="button"

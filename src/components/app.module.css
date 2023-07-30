@@ -1,10 +1,4 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.header {
+/* .header {
   color: #00b6bc;
   font-size: 2.2rem;
   padding: 5px 15px;
@@ -18,20 +12,7 @@
   composes: header;
   font-size: 2rem;
   background-color: transparent;
-}
-
-.contactsBox {
-  padding: 2rem;
-  border: 5px dotted #00b6bc;
-  border-radius: 1rem;
-  min-width: 27rem;
-  margin-bottom: 2rem;
-}
-
-.centred {
-  display: flex;
-  justify-content: center;
-}
+} */
 
 .centeredContainer {
   display: flex;
