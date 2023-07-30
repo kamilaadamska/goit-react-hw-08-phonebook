@@ -13,6 +13,8 @@ export const EditWindow = () => {
   const id = useSelector(selectIdToEdit);
   const nameToEdit = useSelector(selectNameToEdit);
   const numberToEdit = useSelector(selectNumberToEdit);
+  const bodyEl = document.querySelector('body');
+  bodyEl.style.overflow = 'hidden';
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -25,6 +27,7 @@ export const EditWindow = () => {
 
     dispatch(editContact({ id, contact }));
     dispatch(setEdit({ status: false, id: null, name: null, number: null }));
+    bodyEl.style.overflow = 'auto';
   };
 
   const handleNameChange = e => {
@@ -51,42 +54,49 @@ export const EditWindow = () => {
 
   const cancelEditing = () => {
     dispatch(setEdit({ status: false, id: null, name: null, number: null }));
+    bodyEl.style.overflow = 'auto';
   };
 
   return (
-    <form onSubmit={handleSubmit} className={css.editWindow}>
-      <label className={css.formLabel}>
-        Name
-        <input
-          type="text"
-          name="name"
-          className={css.formInput}
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          value={nameToEdit}
-          onChange={e => handleNameChange(e)}
-          required
-        />
-      </label>
-      <label className={css.formLabel}>
-        Number
-        <input
-          type="tel"
-          name="number"
-          className={css.formInput}
-          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-          value={numberToEdit}
-          onChange={e => handleNumberChange(e)}
-          required
-        />
-      </label>
-      <button type="submit" className={css.formButton}>
-        Edit contact
-      </button>
-      <button type="button" className={css.formButton} onClick={cancelEditing}>
-        Cancel
-      </button>
-    </form>
+    <div className={css.modalContainer}>
+      <form onSubmit={handleSubmit} className={css.editWindow}>
+        <label className={css.formLabel}>
+          Name
+          <input
+            type="text"
+            name="name"
+            className={css.formInput}
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            value={nameToEdit}
+            onChange={e => handleNameChange(e)}
+            required
+          />
+        </label>
+        <label className={css.formLabel}>
+          Number
+          <input
+            type="tel"
+            name="number"
+            className={css.formInput}
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            value={numberToEdit}
+            onChange={e => handleNumberChange(e)}
+            required
+          />
+        </label>
+        <button type="submit" className={css.formButton}>
+          Edit contact
+        </button>
+        <button
+          type="button"
+          className={css.formButton}
+          onClick={cancelEditing}
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
   );
 };

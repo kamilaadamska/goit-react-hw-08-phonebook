@@ -15,17 +15,20 @@
   margin-top: 0;
 }
 
+.centred {
+  display: flex;
+  justify-content: center;
+}
+
 .contactsBox {
+  composes: centred;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem;
   border: 5px dotted #00b6bc;
   border-radius: 1rem;
   min-width: 27rem;
   margin-bottom: 2rem;
-}
-
-.centred {
-  display: flex;
-  justify-content: center;
 }
 
 .formButton {
@@ -40,4 +43,11 @@
   box-shadow: inset 3px 3px 21px -14px rgba(66, 68, 90, 1);
   cursor: pointer;
   background-color: #a1dbf1;
+}
+
+.addContactBtn {
+  composes: formButton;
+  font-size: 1.1rem;
+  padding: 0.6rem;
+  margin-bottom: 1.2rem;
 }

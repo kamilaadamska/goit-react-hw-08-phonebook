@@ -1,3 +1,15 @@
+.modalContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .contactForm {
   display: flex;
   flex-direction: column;
@@ -6,10 +18,6 @@
   border: 5px dotted #00b6bc;
   border-radius: 1rem;
   background-color: #e4f4f3;
-  width: 15rem;
-  height: 15rem;
-  position: absolute;
-  transform: translate(20%, -35%);
 }
 
 .formLabel {
@@ -42,6 +50,11 @@
   background-color: #71d5e4;
   border-radius: 4px;
   font-weight: bold;
+}
+
+.formButton:not(:last-child) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .formButton:hover {

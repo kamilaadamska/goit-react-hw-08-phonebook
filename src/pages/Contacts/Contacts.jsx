@@ -33,7 +33,7 @@ const Contacts = () => {
     <div className={css.container}>
       <h2 className={css.header}>Contacts</h2>
       <div className={css.contactsBox}>
-        <button type="button" onClick={show} className={css.formButton}>
+        <button type="button" onClick={show} className={css.addContactBtn}>
           Add contact
         </button>
         {showContactsForm && <ContactForm />}
