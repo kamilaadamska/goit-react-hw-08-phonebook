@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { Notify } from 'notiflix';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
@@ -40,6 +41,9 @@ export const logIn = createAsyncThunk(
       setAuthHeader(response.data.token);
       return response.data;
     } catch (error) {
+      Notify.failure(
+        'Wrong email or password. Please try again or register if you do not have account.'
+      );
       return thunkAPI.rejectWithValue(error.message);
     }
   }
